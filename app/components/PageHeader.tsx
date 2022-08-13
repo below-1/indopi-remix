@@ -9,7 +9,6 @@ type PageHeaderProps = {
 
 const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, children }) => {
   const session = useSession()
-  console.log('PageHeader')
   return (
     <nav className="h-16 w-full flex items-center text-gray-600 md:px-12 bg-white">
 

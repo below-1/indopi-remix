@@ -2,10 +2,7 @@ import { z } from 'zod'
 import type { ActionFunction } from '@remix-run/node'
 import { json, redirect } from '@remix-run/node'
 import { Form, useActionData } from '@remix-run/react'
-import Field from '~/components/form/Field'
-import Input from '~/components/form/Input'
-import ListError from '~/components/form/ListError'
-import Select from '~/components/form/Select'
+import SiswaForm from '~/components/siswa/SiswaForm'
 import Submit from '~/components/form/Submit'
 import PageHeader from '~/components/PageHeader'
 import { jenis_kelamin_schema } from '~/model/siswa'
@@ -93,86 +90,11 @@ export default function NewSiswaPage() {
           encType="multipart/form-data"
           className='md:w-1/2 bg-white p-4 rounded border'
         >
-          <ListError errors={message} />
-          <Field label="NISN">
-            <Input
-              name="nisn"
-              required
-              type="text"
-              errors={fieldErrors?.nisn}
-            />
-          </Field>
-          <Field label="Nama">
-            <Input
-              name="nama"
-              required
-              type="text"
-              errors={fieldErrors?.nama}
-            />
-          </Field>
-          <Field label="Jenis Kelamin">
-            <Select
-              name="jenis_kelamin"
-              required
-              options={[
-                { label: 'Laki - Laki', value: 'Laki - Laki' },
-                { label: 'Perempuan', value: 'Perempuan' }
-              ]}
-              errors={fieldErrors?.jenis_kelamin}
-            />
-          </Field>
-          <Field label="Tangal Lahir">
-            <Input
-              name="tanggal_lahir"
-              required
-              type="date"
-              errors={fieldErrors?.tanggal_lahir}
-            />
-          </Field>
-          <Field label="Penghasilan Orang Tua">
-            <Input
-              name="penghasilan_ortu"
-              required
-              type="number"
-              min={100_000}
-              errors={fieldErrors?.penghasilan_ortu}
-            />
-          </Field>
-          <Field label="Penghasilan Orang Tua">
-            <Input
-              name="tanggungan_ortu"
-              required
-              type="number"
-              min={1}
-              errors={fieldErrors?.tanggungan_ortu}
-            />
-          </Field>
-          <Field label="Kelas">
-            <Select
-              name="kelas"
-              required
-              options={[
-                { label: 'VII', value: 7 },
-                { label: 'VIII', value:8 }
-              ]}
-              errors={fieldErrors?.kelas}
-            />
-          </Field>
-          <Field label="Sub Kelas">
-            <Input
-              name="sub_kelas"
-              required
-              min={1}
-              max={30}
-              errors={fieldErrors?.sub_kelas}
-            />
-          </Field>
-          <Field label="Username">
-            <Input
-              name="username"
-              errors={fieldErrors?.username}
-            />
-          </Field>
+          <SiswaForm
+            fields={fields}
+            fieldErrors={fieldErrors}
+            message={message}
+          />
           <Submit label='tambah siswa'></Submit>
         </Form>
       </div>

@@ -20,7 +20,7 @@ export type Ok<T> = { ok: true; data: T };
 export type Err<E> = { ok: false; error: E };
 export type Result<T, E = unknown> = Ok<T> | Err<E>;
 
-export async function wrap<T, E = unknown>(prom: Promise<T>): Promise<Result<T, E>> {
+export async function wrap<T, E extends AppErr>(prom: Promise<T>): Promise<Result<T, E>> {
   try {
     const result = await prom;
     return { ok: true, data: result }
