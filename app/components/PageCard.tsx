@@ -6,7 +6,7 @@ export type PageCardProps = {
 
 export default function PageCard({ children } : PageCardProps) {
   return (
-    <div className="py-6 flex flex-col gap-6">
+    <div className="py-6 px-12 flex flex-col gap-6">
       {children}
     </div>
   )

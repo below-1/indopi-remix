@@ -58,7 +58,7 @@ export default function SiswaDetailPage() {
               <h1 className="text-xl font-bold">{siswa.nisn}, {siswa.id}</h1>
             </div>
             <Link 
-              to={`/app/siswa/${siswa.nisn}/remove-confirm`}
+              to={`/app/siswa/${siswa.id}/remove-confirm`}
               className="p-2 rounded transition-all hover:bg-pink-500 focus:bg-pink-500 focus:text-white hover:text-white"
             >
               <Icon icon={trashIcon} className="h-12 w-12" />

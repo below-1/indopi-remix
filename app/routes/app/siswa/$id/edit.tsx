@@ -58,7 +58,7 @@ export default function SiswaEditPage() {
   const siswa = siswaGetter()
   console.log(siswa)
   const actionData = useActionData<ActionData>()
-  const message = actionData?.message ? [ actionData.messae ] : undefined;
+  const message = actionData?.message ? [ actionData.message ] : undefined;
   const fields = actionData?.fields ? actionData.fields : siswa
 
   return (

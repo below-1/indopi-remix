@@ -81,6 +81,7 @@ export default function LoginPage() {
         <Field label="password">
           <Input
             name="password"
+            type="password"
             errors={fieldErrors?.password}
             defaultValue={fields?.password}
           />

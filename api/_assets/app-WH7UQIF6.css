@@ -742,10 +742,6 @@ video {
   gap: 0.75rem;
 }
 
-.self-start {
-  align-self: flex-start;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
