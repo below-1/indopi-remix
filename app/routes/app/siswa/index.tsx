@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { LoaderFunction, json } from '@remix-run/node'
-import { Link, useFetcher, useLoaderData, useLocation } from '@remix-run/react'
+import { Link, useFetcher, useLoaderData, useLocation, useResolvedPath } from '@remix-run/react'
 import { Icon } from '@iconify/react'
 import IC_viewGrid from '@iconify/icons-heroicons-outline/view-grid'
 
@@ -176,6 +176,9 @@ export default function ListSiswaPage() {
               setKelas(kelas)
             }}
           />
+          <Link to={useResolvedPath('new')} className="px-4 rounded bg-indigo-600 text-white flex items-center justif-center font-bold">
+            Tambah Siswa
+          </Link>
         </div>
 
         <div className='bg-white'>

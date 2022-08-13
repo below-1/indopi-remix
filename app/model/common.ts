@@ -24,3 +24,8 @@ export const float_string = z.string()
     return !isNaN(x)
   })
   .transform(s => parseFloat(s))
+
+export const nisn_schema = z.string()
+  .min(10, 'harus 10 karakter')
+  .max(10, 'harus 10 karakter')
+  .regex(new RegExp('[0-9]{10,10}'), 'NISN tidak valid')
